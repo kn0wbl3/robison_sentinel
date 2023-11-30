@@ -1,0 +1,388 @@
+<html lang="en"><style type="text/css">
+  @font-face {
+    font-family: 'Avenir Next CE';
+    src: url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Medium/1a7c9181-cd24-4943-a9d9-d033189524e0.eot") format("eot"), url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Medium/f26faddb-86cc-4477-a253-1e1287684336.woff") format("woff"), url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Medium/63a74598-733c-4d0c-bd91-b01bffcd6e69.ttf") format("ttf"), url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Medium/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: 'Avenir Next CE';
+    font-weight: 600;
+    src: url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Demi/12d643f2-3899-49d5-a85b-ff430f5fad15.eot") format("eot"), url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Demi/91b50bbb-9aa1-4d54-9159-ec6f19d14a7c.woff") format("woff"), url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Demi/a0f4c2f9-8a42-4786-ad00-fce42b57b148.ttf") format("ttf"), url("chrome-extension://facncfnojagdpibmijfjdmhkklabakgd/assets/fonts/AvenirNextLTW01-Demi/aad99a1f-7917-4dd6-bbb5-b07cedbff64f.woff2") format("woff2");
+  }
+  </style><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="" type="mobile-web-app-capable" content="yes">
+<meta name="" type="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="robots" content="noindex, nofollow">
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-WX7HXV1TX0&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-62G436H9KH&amp;l=dataLayer&amp;cx=c"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="/header/jscript/lib/functions.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/jquery-3.6.0.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap4/popper.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap4/bootstrap.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap4/bootstrap-table.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap4/moment-with-locales.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap4/tempusdominus-bootstrap-4.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap4/masonry.pkgd.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap-filestyle.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/bootstrap4/bootstrap-table-print.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/easy-framework/other/c3.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/easy-framework/other/d3.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/Chart.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/autosize.min.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/addtohomescreen.js?_=1684285626"></script>
+<script type="text/javascript" src="/header/jscript/lib/addtohomescreen.min.js?_=1684285626"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/style/lib/bootstrap4/bootstrap-grid.min.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/lib/bootstrap4/bootstrap.min.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/lib/bootstrap4/bootstrap-reboot.min.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/lib/bootstrap4/bootstrap-table.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/lib/bootstrap4/tempusdominus-bootstrap-4.min.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/header/dw-base/style/font-awesome5.min.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/header/dw-base/style/font-awesome.min.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/lib/c3.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/lib/Chart.min.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/site/Base.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/style/site/theme.css?_=1684285626">
+<link rel="stylesheet" type="text/css" href="/header/style/site/ios_nozoom.css" disabled="true" data-css-id="ios-no-zoom">
+<title>Robison - Login or Register</title>
+<meta name="description" content="Robison Login or Register">
+<link rel="shortcut icon" type="image/x-icon" href="/images/local/favicon_robison.ico">
+<link rel="shortcut icon" type="image/png" href="/images/icon_robison_114.png">
+<link rel="apple-touch-icon icon" type="image/png" sizes="144x144" href="/images/icon_robison_114.png">
+<link rel="apple-touch-icon-precomposed" type="image/png" sizes="144x144" href="/images/icon_robison_114.png">
+<link rel="shortcut icon" type="image/png" href="/images/local/icon_robison_144.png">
+<link rel="apple-touch-icon icon" type="image/png" sizes="114x114" href="/images/local/icon_robison_144.png">
+<link rel="apple-touch-icon-precomposed" type="image/png" sizes="114x114" href="/images/local/icon_robison_144.png">
+<link rel="shortcut icon" type="image/png" href="/images/local/icon_robison_72.png">
+<link rel="apple-touch-icon icon" type="image/png" sizes="72x72" href="/images/local/icon_robison_72.png">
+<link rel="apple-touch-icon-precomposed" type="image/png" sizes="72x72" href="/images/local/icon_robison_72.png">
+<meta name="author" content="Destwin LLC">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-49094012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Google Tag Manager -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-71836498-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-71836498-1');
+</script><link rel="stylesheet" type="text/css" id="accessstyle_contrast" disabled="" href=""><link rel="stylesheet" type="text/css" id="accessstyle_font_style" disabled="" href=""></head>
+
+<!-- Format Version: V3, format_page file: site/site_format_v3.inc -->
+<body id="page-login" class="wcag-font-14" style="min-height: 100vh;" onload=" setupAffix();">
+<!-- Format Version: site_format_v3 -->
+
+<!-- Start Outer Div -->
+
+<div id="outer-div" class="outer-div"><!-- outer-div -->
+
+<div id="body-table" class="body-table"><!-- body-table -->
+
+<div id="tooltip">
+
+</div><!-- tooltip -->
+
+<!-- Row 1: W -->
+<div style="height: 165.909px;"></div><div id="row-W" class="site-row affix" data-toggle="affix" role="banner">
+<div id="topBar"><!-- begin topbar -->
+
+<div id="topBarContainer" class="container"><!-- begin topbar's container -->
+<!-- left --><ul class="topBar-links list-inline float-left my-0"></ul><!-- right -->
+</div><!-- end topbar's container -->
+
+</div><!-- end topbar -->
+
+<div id="mainNav"><!-- begin mainNav -->
+<nav role="navigation" class="navbar navbar-expand-lg navbar-light">
+<div id="mainNavContainer" class="container"><!-- begin mainNavContainer -->
+<a href="/login" class="navbar-brand mb-0 h1" id="logo" alt="Home" aria-label="logo"><img id="logoImg" alt="Home" title="Home" aria-label="Home" src="/images/local/logo.png"></a>
+</div><!-- end mainNavContainer -->
+</nav>
+</div><!-- end mainNav -->
+
+</div><!-- Row 1: widetop -->
+
+<!-- Start Main Row -->
+
+<!-- Row 5: M -->
+<div id="row-M" class="site-row main-row d-flex flex-column"><div class="main-column">
+<!-- Start Main Div -->
+
+<div id="main-div" class="main-div container my-3 mb-3" aria-label="Main Content" role="main"><!-- main-div -->
+
+<div id="content">
+
+<div id="site-login-div" class="site-login-div">
+
+<form name="form1" action="/login" method="POST">
+<input type="hidden" id="refer_page" name="refer_page" value="https://www.robisonoil.com/heating-oil/" class=" "><input type="hidden" id="edit" name="edit" value="" class=" "><input type="hidden" id="email_on_record" name="email_on_record" value="" class=" "><input type="hidden" id="first_time_through" name="first_time_through" value="" class=" ">
+<!-- Prepare Login Forms -->
+
+<!-- Info Site -->
+
+<!-- Start Info Login Forms -->
+<!-- No Tables -->
+
+<div class="row"><!-- start login row -->
+
+<div class="col-md-offset-4 col-md-4 offset-md-4 mb-3"><!-- start col-md-offset-4 col-md-4 offset-md-4 -->
+
+<div class="form-body card">
+
+<div class="card-header"><!-- start card-header -->
+<ul class="card-header-tabs nav nav-tabs final-login"><li class="nav-item"><a data-toggle="tab" class="nav-link active " href="#login" aria-expanded="true">Login</a></li><li class="nav-item"><a data-toggle="tab" class="nav-link " href="#register" aria-expanded="false">Register</a></li></ul>
+</div><!-- end card-header -->
+
+<div class="tab-content">
+
+<div id="login" class="tab-pane fade  active show in"><!-- start login -->
+
+<div class="card-body inner-form"><!-- start inner-form -->
+
+<div id="user_login_existing_title" class="user-info-marketing-intro general-marketing">
+<div data-dmm-id="7">
+<h2>Customer <span style="color: var(--primary);">Login</span></h2>
+<p>Already registered? Access your account by logging in below.</p>
+</div>
+</div>
+
+<div class="login-form"><!-- start login-form -->
+
+<div class="form-group"><!-- begin form-group -->
+
+<div id="username-div">
+<label for="email_check" class="sr-only">Email Address or Account Number</label><input type="text" id="email_check" name="email_check" value="" class="text login-credentials form-control ignore " size="20" maxlength="100" placeholder="Email Address or Account Number" aria-label="please enter email address or account number" autofocus=""><div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div><div id="passwd-div"><label for="password_check" class="sr-only">Password</label><input type="password" id="password_check" name="password_check" value="" class="text login-credentials form-control ignore " size="20" maxlength="250" placeholder="Password" autocomplete="off">
+<div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+
+</div><!-- end form-group -->
+
+<div class="form-group"><!-- begin form-group -->
+
+<div class="row">
+
+<div id="submit-button-input-div" class="col-sm-auto ml-sm-auto">
+<input type="submit" id="cmdLogin" name="cmdLogin" value="Login" class="btn btn-lg btn-primary btn-block ">
+</div>
+
+</div>
+
+</div>
+
+<div id="login-align-div" class="clearing"></div>
+
+</div><!-- end login-form -->
+
+<div class="clearfix">
+
+</div>
+
+</div><!-- end inner-form -->
+
+<div id="new-passwd-div" class="card-footer text-center"><!-- start new-passwd-div -->
+
+<div class="row">
+
+<div class="col-lg-12">
+
+<div class="text-center">
+<input type="submit" id="cmdNewPassword" name="cmdNewPassword" value="Forgot Your Password?" class="btn btn-link ">
+</div>
+
+</div>
+
+</div>
+
+</div><!-- end new-passwd-div -->
+
+</div><!-- end login -->
+
+<div id="register" class="tab-pane fade "><!-- start register -->
+
+<div class="card-body inner-form"><!-- start inner-form -->
+
+<div id="user_login_register_title" class="user-info-marketing-intro general-marketing marketingSlot mb-3">
+<div data-dmm-id="11">
+<h2>Online <span style="color: var(--primary);">Registration</span></h2>
+<p>Already a  customer? Register below for online access to your account(s).</p>
+</div>
+</div>
+
+<div class="register-form"><!-- start register-form -->
+
+<!--== login abbrev registration, tabbed ==-->
+
+<div class="form-group"><!-- start form-group 1 -->
+
+<div id="signup-account">
+<label class="sr-only" for="bill_account">Account Number</label><!-- gfp var: bill_account --><input type="text" id="bill_account" name="bill_account" value="" class="text login-credentials form-control " placeholder="Account Number" aria-label="account number">
+</div>
+
+<div id="signup-digits">
+<label class="sr-only" for="bill_digits">House or PO Box Number</label><!-- gfp var: bill_digits --><input type="text" id="bill_digits" name="bill_digits" value="" class="text login-credentials form-control " placeholder="House or PO Box Number" aria-label="street address digits, only">
+</div>
+
+<div id="signup-email">
+<label class="sr-only" for="bill_email">Email Address</label><!-- gfp var: bill_email --><input type="text" id="bill_email" name="bill_email" value="" class="text login-credentials form-control " placeholder="Email Address" aria-label="email address">
+</div>
+
+</div><!-- end form-group 1 -->
+
+<div class="form-group"><!-- start form-group 2 -->
+
+<div class="row"><!-- start row -->
+
+<div id="submit-register" class="col-sm-auto ml-sm-auto">
+<input type="submit" id="cmdRegisterMemberAbbrev" name="cmdRegisterMemberAbbrev" value="Continue" class="btn btn-lg btn-primary ">
+</div>
+
+</div><!-- end row -->
+
+</div><!-- end form-group 2 -->
+
+</div><!-- end register-form -->
+
+<div class="clearing"></div>
+<script type="text/javascript">
+
+    window.checkAllInputs = [    {
+        name: "bill_digits",
+        pattern: /^[0-9]+$/,
+
+    },    {
+        name: "bill_email",
+        pattern: /^\s*[^\s]+@[^\s]+\.[^\s]{2}[^\s]*\s*$/,
+
+    },    ];
+
+</script>
+</div><!-- end inner-form -->
+
+<div class="card-footer text-center" id="new-register-div">
+<input type="submit" id="cmdSwitchLogin" name="cmdSwitchLogin" value="Already registered? Login Now" class="btn btn-link ">
+</div>
+
+</div><!-- end register -->
+
+</div><!-- end tab-content -->
+
+</div><!-- end form-body -->
+
+</div><!-- end col-md-offset-4 col-md-4 offset-md-4 -->
+
+</div><!-- end login row -->
+
+<!-- End Info Login Forms -->
+<!-- Login Forms Done -->
+<input type="hidden" id="csrf_token" name="csrf_token" value="b275c4e0efc05918d308967981519631" class=" ">
+</form>
+<!-- END site-login-div -->
+</div>
+
+<div id="user_login_bottom" class="user-info-marketing-intro general-marketing mb-3">
+<div data-dmm-id="13">
+<!-- Modal trigger modal --><center><a href="#" type="button" class="" data-toggle="modal" data-target="#NeedHelpModalCenter">
+  Need Help?
+  </a></center>
+
+<!-- Modal -->
+<div class="modal fade" id="NeedHelpModalCenter" tabindex="-1" role="dialog" aria-labelledby="NeedHelpModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Need Help?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    For assistance, please call Robison at <a href="/document/serviceplans2023">914-345-5700</a> or e-mail at <a href="https://www.volunteernewyork.org/service?utm_source=robison&amp;utm_medium=banner&amp;utm_campaign=911_sponsor&amp;utm_content=volunteer">customercare@robisonoil.com</a>.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" role="button">Dismiss</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="clearing"></div>
+<!-- END content div -->
+</div>
+
+</div><!-- main-div -->
+
+</div><!-- main-column -->
+
+</div><!-- main-row -->
+
+<!-- Row Footer -->
+
+<!-- Row 6: F -->
+<div id="row-F" class="site-row footer-row">
+<div class="footer" role="contentinfo" id="footer1"><!-- footer-column -->
+
+<!-- Start Endpage Div -->
+
+<div id="endpage-div" class="endpage-div">
+<div class="innerfooter"></div>
+</div>
+
+<!-- End Endpage Div -->
+
+</div><!-- footer-column -->
+
+</div><!-- Row 6: footer-row -->
+
+</div><!-- body-table -->
+
+</div><!-- outer-div -->
+
+<!-- End Outer Div -->
+<footer class="footer" role="contentinfo" id="footer1">
+<div class="container text-center text-md-left py-2"><!-- begin footer container -->
+
+<div class="row d-flex align-items-center"><!-- begin footer row -->
+
+<div class="col-md-6 col-lg-6"><!-- begin footer left column -->
+
+<div class="text-center text-md-left" id="footerLeft">
+
+<div class="d-inline mr-1" id="copyright">
+© Copyright 2023 <a href="/login" title="Robison" alt="Robison"><strong>Robison</strong></a>
+</div>
+
+</div>
+
+</div><!-- end footer left column -->
+
+<div class="col-md-6 col-lg-6"><!-- begin footer right column -->
+
+<div class="text-center text-md-right">
+<ul class="footer-nav d-inline list-unstyled list-inline mb-0" id="footerNav_Left"><li class="footer-item list-inline-item"><a href="https://www.robisonoil.com/" title="Home" alt="Home" class="footer-link" target="_blank">Home</a></li><li class="footer-item list-inline-item"><a href="https://www.robisonoil.com/about-us/" title="About Us" alt="About Us" class="footer-link" target="_blank">About Us</a></li><li class="footer-item list-inline-item"><a href="https://www.robisonoil.com/sitemap/" title="Sitemap" alt="Sitemap" class="footer-link" target="_blank">Sitemap</a></li><li class="footer-item list-inline-item"><a href="https://www.robisonoil.com/contact-us/" title="Contact Us" alt="Contact Us" class="footer-link" target="_blank">Contact Us</a></li><li class="footer-item list-inline-item"><a href="https://www.facebook.com/RobisonEnergy/" title="Facebook" alt="Facebook" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class="fab fa fa-facebook-f"></i></a></li><li class="footer-item list-inline-item"><a href="https://twitter.com/RobisonEnergy1" title="Twitter" alt="Twitter" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class="fab fa fa-twitter"></i></a></li><li class="footer-item list-inline-item"><a href="https://www.youtube.com/robisonenergy" title="Youtube" alt="Youtube" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class="fab fa fa-youtube"></i></a></li><li class="footer-item list-inline-item"><a href="https://www.instagram.com/robisonenergy/" title="Instagram" alt="Instagram" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class="fab fa fa-instagram"></i></a></li></ul>
+</div>
+
+</div><!-- end footer right column -->
+
+</div><!-- end footer row -->
+
+</div><!-- end footer container -->
+</footer><script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(){
+//had to disable this, the dwl-browser-detect.js file is not compatible with IE
+//		if(window.dwlbroserdetect.satisfies({mobile:{safari:'>=9'}})){
+//		    document.querySelector("link[data-css-id='ios-no-zoom']").disabled = false;
+//  		}
+});
+</script><div data-lastpass-root="" style="position: absolute !important; top: 0px !important; left: 0px !important; height: 0px !important; width: 0px !important;"><div data-lastpass-infield="true" style="position: absolute !important; top: 0px !important; left: 0px !important;"></div></div></body></html>

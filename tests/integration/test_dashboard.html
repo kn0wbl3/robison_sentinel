@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+<meta http-equiv='X-UA-Compatible'  content='IE=edge' >
+<meta http-equiv='Content-Type'  content='text/html; charset=utf-8' >
+<meta http-equiv='Content-Script-Type'  content='text/javascript' >
+<meta http-equiv='Content-Style-Type'  content='text/css' >
+<meta name='robots'  content='noindex, nofollow' >
+<script type='text/javascript'  src='/header/jscript/lib/functions.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/jquery-3.6.0.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/site/contracts.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/scheduler.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap4/popper.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap4/bootstrap.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap4/bootstrap-table.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap4/moment-with-locales.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap4/tempusdominus-bootstrap-4.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap4/masonry.pkgd.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap-filestyle.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/bootstrap4/bootstrap-table-print.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/easy-framework/other/c3.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/easy-framework/other/d3.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/Chart.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='/header/jscript/lib/autosize.min.js?_=1684285626' ></script>
+<script type='text/javascript'  src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js'  charset='utf-8' ></script>
+<link rel='stylesheet'  type='text/css'  href='/style/lib/bootstrap4/bootstrap-grid.min.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/lib/bootstrap4/bootstrap.min.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/lib/bootstrap4/bootstrap-reboot.min.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/lib/bootstrap4/bootstrap-table.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/lib/bootstrap4/tempusdominus-bootstrap-4.min.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/header/dw-base/style/font-awesome5.min.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/header/dw-base/style/font-awesome.min.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/lib/c3.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/lib/Chart.min.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/site/Base.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/style/site/theme.css?_=1684285626' >
+<link rel='stylesheet'  type='text/css'  href='/header/style/site/ios_nozoom.css'  disabled='true'  data-css-id='ios-no-zoom' >
+<title>Robison User Information</title>
+<meta name='description'  content='Robison User Information' >
+<meta name='keywords'  content='Robison, User Information' >
+<link rel='shortcut icon'  type='image/x-icon'  href='/images/local/favicon_robison.ico' >
+<link rel='shortcut icon'  type='image/png'  href='/images/icon_robison_114.png' >
+<link rel='apple-touch-icon icon'  type='image/png'  sizes='144x144'  href='/images/icon_robison_114.png' >
+<link rel='apple-touch-icon-precomposed'  type='image/png'  sizes='144x144'  href='/images/icon_robison_114.png' >
+<link rel='shortcut icon'  type='image/png'  href='/images/local/icon_robison_144.png' >
+<link rel='apple-touch-icon icon'  type='image/png'  sizes='114x114'  href='/images/local/icon_robison_144.png' >
+<link rel='apple-touch-icon-precomposed'  type='image/png'  sizes='114x114'  href='/images/local/icon_robison_144.png' >
+<link rel='shortcut icon'  type='image/png'  href='/images/local/icon_robison_72.png' >
+<link rel='apple-touch-icon icon'  type='image/png'  sizes='72x72'  href='/images/local/icon_robison_72.png' >
+<link rel='apple-touch-icon-precomposed'  type='image/png'  sizes='72x72'  href='/images/local/icon_robison_72.png' >
+<meta name='author'  content='Destwin LLC' >
+<meta name='viewport'  content='width=device-width, initial-scale=1.0' >
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-49094012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Google Tag Manager -->
+<script async src=https://www.googletagmanager.com/gtag/js?id=UA-71836498-1></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-71836498-1');
+</script></head>
+
+<!-- Format Version: V3, format_page file: site/site_format_v3.inc -->
+<body id='page-user-home' class='wcag-font-14' style='min-height: 100vh;' onload='tabbedDivDisplay("topmenu", "summary", "user", 1, "", 1); createTankGauge("#FF0000,#F97600,#F6C600,#60B044", "30,60,90,100", ""); populateMonthlyBarGraph("deliveries", true);  populateMonthlyBarGraph("payments", false);  createPieOrDonutGraph("plangallons", "donut");  setupPopoverV4(); setupAffix();' class='user-record-summary'>
+<!-- Format Version: site_format_v3 -->
+
+<!-- Start Outer Div -->
+
+<div id='outer-div' class='outer-div'><!-- outer-div -->
+
+<div id='body-table' class='body-table'><!-- body-table -->
+
+<div id='tooltip'>
+
+</div><!-- tooltip -->
+
+<!-- Row 1: W -->
+<div id='row-W' class='site-row' data-toggle='affix'>
+<div id='topBar'><!-- begin topbar -->
+
+<div id='topBarContainer' class='container'><!-- begin topbar's container -->
+<!-- left --><ul class='topBar-links list-inline float-left my-0'></ul><!-- right -->
+<!-- PageElement: 'topbartopmenu', TYPE: 'menu', TARGET: 'top-navigation' -->
+
+
+<!-- begin buildCSSMenu: top-navigation menuname: topbartopmenu-->
+
+
+
+<!-- begin buildULPopups: depth=0-->
+
+<ul id='topbartopmenu' class='topBar-links list-inline float-right my-0'>
+<li class='nav-item'><a href='tel:9143455700' alt="Call 914-730-5287" id="topphone" class="nav-link Q">914-345-5700</a>
+</li>
+<li class='nav-item'><a href='https://www.robisonoil.com/news/' alt="News" class="nav-link Q" id>News</a>
+</li>
+<li class='nav-item'><a href='https://www.robisonoil.com/reviews/' alt="Reviews" class="nav-link Q" id>Reviews</a>
+</li>
+<li class='nav-item'><a href='/logout' alt="Logout" id="logout" class="nav-link Q">Logout</a>
+</li>
+</ul>
+
+
+<!-- end buildCSSMenu: top-navigation -->
+
+
+<!-- End PageElement: 'topbartopmenu' -->
+
+</div><!-- end topbar's container -->
+
+</div><!-- end topbar -->
+
+<div id='mainNav'><!-- begin mainNav -->
+<nav role='navigation' class='navbar navbar-expand-lg navbar-light'>
+<div id='mainNavContainer' class='container'><!-- begin mainNavContainer -->
+<a href='/login' class="navbar-brand mb-0 h1" id="logo" alt="Home" aria-label="Home"><img id='logoImg' alt='Home' title='Home' aria-label='Home' src='/images/local/logo.png'></a><button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#mainNavbar' aria-controls='mainNavbar' aria-expanded='true' aria-label='Toggle navigation'><span class='navbar-toggler-icon'></span></button>
+<div class='navbar-collapse collapse' id='mainNavbar'><!-- begin mainNavbar -->
+
+<!-- PageElement: 'widetopmenu', TYPE: 'menu', TARGET: 'Main-navigation_Robison' -->
+
+
+<!-- begin buildCSSMenu: Main-navigation_Robison menuname: widetopmenu-->
+
+
+
+<!-- begin buildULPopups: depth=0-->
+
+<ul id='mainNavbarMenu' class='navbar-nav ml-auto'>
+<li id='dashboard_summary' class='nav-item'><a href='/user-home' id="dashboard" class="nav-link Q">Dashboard</a>
+</li>
+<li id='myaccount0' class='nav-item dropdown'><a href='#' class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="myaccount1">My Account</a>
+
+<div class='dropdown-menu dropdown-menu-right' id='subxid_6' aria-labelledby='navbarDropdown'><!-- begin div for sub of xid_6 -->
+
+
+<!-- begin buildULPopups: depth=1-->
+
+<a href='#' class="dropdown-item h6 dropdown-header" data-toggle aria-expanded="true" id="myaccount-dropdown-header">My Account</a><button id='user-option-button-transaction' name='transaction' value='Transactions' class='user-option-button dropdown-item' onclick='window.location.href="/user-records?tab=transactions";' type='button'>Transactions</button>
+<!-- OPERATION: Transaction, CLASS:  -->
+<button id='user-option-button-delivery' name='delivery' value='Deliveries' class='user-option-button dropdown-item' onclick='window.location.href="/user-records?tab=delivery";' type='button'>Deliveries</button>
+<!-- OPERATION: Delivery, CLASS:  -->
+<button id='user-option-button-showcontract' name='showcontract' value='Price Plans' class='user-option-button dropdown-item' onclick='window.location.href="/user-records?tab=oilpriceprotection";' type='button'>Price Plans</button>
+<!-- OPERATION: ShowContract, CLASS:  -->
+<button id='user-option-button-showservice' name='showservice' value='Service Plans' class='user-option-button dropdown-item' onclick='window.location.href="/user-records?tab=service";' type='button'>Service Plans</button>
+<!-- OPERATION: ShowService, CLASS:  -->
+<a href='/statements' alt="Documents" class="dropdown-item" id>Documents</a><a href='/viewcoupons' alt="Coupons" class="dropdown-item" id="coupQ">Coupons</a><a href='#' class="dropdown-item h6 dropdown-header" data-toggle aria-expanded="true" id="manageaccount-dropdown-header">Manage Account</a><a href='/myprofile' alt="Manage Account" class="dropdown-item" id>Manage Account</a><a href='/feedback' alt="Customer Feedback" class="dropdown-item" id>Customer Feedback</a><button id='user-option-button-emailupdate' name='cmdEmailUpdate' value='Change Email' class='user-option-button dropdown-item' onclick='window.location.href="/emailupdate";' type='button'>Change Email</button>
+<!-- OPERATION: EmailUpdate, CLASS:  -->
+<a href='/password' alt="Change Password" class="dropdown-item" id>Change Password</a>
+</div><!-- end div for sub of xid_6 -->
+</li>
+<li class='nav-item'><a href='/fuelpurchase' class="nav-link Q" id>Order Fuel</a>
+</li>
+<li class='nav-item'><a href='/scheduler' class="nav-link Q" id>Schedule Service</a>
+</li>
+<li class='nav-item dropdown'><a href='#' class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id>Payments</a>
+
+<div class='dropdown-menu dropdown-menu-right' id='subxid_21' aria-labelledby='navbarDropdown'><!-- begin div for sub of xid_21 -->
+
+
+<!-- begin buildULPopups: depth=1-->
+
+<a href='/payment' class="dropdown-item" id>Make a Payment</a><a href='/paperless' class="dropdown-item" id>Enroll in Paperless Billing</a>
+</div><!-- end div for sub of xid_21 -->
+</li>
+<li class='nav-item dropdown'><a href='#' class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id>Plan Enrollment</a>
+
+<div class='dropdown-menu dropdown-menu-right' id='subxid_24' aria-labelledby='navbarDropdown'><!-- begin div for sub of xid_24 -->
+
+
+<!-- begin buildULPopups: depth=1-->
+
+<a href='/serviceplan' class="dropdown-item" id>Add Service Plan</a><a href='/automaticdelivery' class="dropdown-item" id>Automatic Delivery</a><button id='user-option-button-budgetcalculator' name='cmdBudgetCalculator' value='Budget Plans' class='user-option-button dropdown-item' onclick='window.location.href="/budgetcalculator";' type='button'>Budget Plans</button>
+<!-- OPERATION: BudgetCalculator, CLASS:  -->
+<button id='user-option-button-contract' name='cmdContract' value='Price Protection' class='user-option-button dropdown-item' onclick='window.location.href="/priceprotection";' type='button'>Price Protection</button>
+<!-- OPERATION: Contract, CLASS:  -->
+
+</div><!-- end div for sub of xid_24 -->
+</li>
+</ul>
+
+
+<!-- end buildCSSMenu: Main-navigation_Robison -->
+
+
+<!-- End PageElement: 'widetopmenu' -->
+
+</div><!-- end mainNavbar -->
+
+</div><!-- end mainNavContainer -->
+</nav>
+</div><!-- end mainNav -->
+
+</div><!-- Row 1: widetop -->
+
+<div class='clearing'></div>
+
+<div class='mb-0 py-3 d-flex align-items-center' id='pageHeader' role='banner'><!-- begin pageHeader -->
+
+<div class='container'><!-- begin container -->
+
+<div class='row row-eq-height d-flex align-items-center'><!-- begin row row-eq-height -->
+
+<div class='col-md-6'><!-- begin page header -->
+<h1 class='page-title'>Dashboard</h1>
+</div><!-- end page header -->
+
+<div class='col-md-6'><!-- begin account/tank selector -->
+
+<div id='account-selector-card' class='card' style><!-- begin card account-selector-card -->
+
+<div class='card-body' role='region'><!-- begin card body -->
+
+<div class='form-row align-items-center'>
+
+<div class='col-12 mb-0 col-md-12 input-group input-group-sm'>
+
+<div class='input-group-prepend'>
+<label class='input-group-text' for='account_num'>Account</label>
+</div>
+<span id='tank-selector' class='custom-select overflow-hidden'>MANLE06, ANDREW MANUELE, 75 LELAND AVENUE, PLEASANTVILLE, NY, 10570</span>
+</div>
+
+</div>
+
+</div><!-- end card body -->
+
+</div><!-- end card account-selector-card -->
+
+</div><!-- end account/tank selector -->
+
+</div><!-- end row row-eq-height -->
+
+</div><!-- end container -->
+
+</div><!-- end pageHeader -->
+
+<!-- Start Main Row -->
+
+<!-- Row 5: M -->
+<div id='row-M' class='site-row main-row d-flex flex-column'><div class='main-column'>
+<!-- Start Main Div -->
+
+<div id='main-div' class='main-div container my-3 mb-3'><!-- main-div -->
+
+<!--- Div Cnt: 1 - for Main Div --->
+
+<div id='priceplanmodal' class='modal fade'>
+
+<div class='modal-dialog modal-dialog-centered modal-sm'>
+
+<div class='modal-content'>
+
+<div class='modal-header'>
+<h5 class='modal-title'>Price Plan Gallons</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button>
+</div>
+
+<div class='modal-body' id='modal-body-details'>
+
+<div id='priceplans_detail'>
+
+</div>
+
+</div>
+
+<div class='modal-footer' id='priceplanmodal-footer1'>
+<input type='button' id='close' name='close' value='Close' class='btn btn-outline-secondary ' data-dismiss='modal'>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!--- displayUserTransactionInformation2 --->
+
+<form method='post' name='hidden_form' action='/memberinquiry'>
+
+<div id='tank-gauge-help-modal' class='modal fade'>
+
+<div class='modal-dialog modal-dialog-centered'>
+
+<div class='modal-content'>
+
+<div class='modal-header'>
+<h5 class='modal-title'>What does this mean?</h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button>
+</div>
+
+<div class='modal-body' id='modal-body-details'>
+
+<div id='tank-gauge-help-detail'>
+This is the percentage of gallons remaining in this 550.00 gallon tank.<br>
+</div>
+
+</div>
+
+<div class='modal-footer' id='tank-gauge-help-modal-footer1'>
+<input type='button' id='close' name='close' value='Close' class='btn btn-outline-secondary ' data-dismiss='modal'>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id='user_summary_notifications' class='marketingSlot mb-3' style><!-- begin card user_summary_notifications -->
+<div data-dmm-id="77"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div style="text-align: center;"><img src="/images/local/image0.jpeg" data-email-embed="1" data-dwl-doc-id="3417" style=""><a href="https://myaccount.robisonoil.com/?_ltgR=kh9PqOK4uxL74Y1T" target="_blank" onclick="ga('send', 'event', {
+                 eventCategory: 'Marketing Message Link',
+    eventAction: 'click',
+    eventLabel: event.target.href,
+  'dimension0':  '3',
+  'dimension1':  '39',
+  'dimension2':  '2',
+  'dimension3':  '-1',
+   transport: 'beacon'
+});"></a><br></div>
+<p>
+</p>
+</body></html>
+</div>
+</div><!-- end card user_summary_notifications -->
+
+<div class='row grid'><!-- begin row -->
+<div class="grid-sizer col-md-6"></div>
+<div class='col-md-6 grid-item'><!-- begin column1 (md6) -->
+
+<div id='contact-card' class='card mb-3' style><!-- begin card contact-card -->
+
+<div class='card-body' role='region'><!-- begin card body -->
+
+<div id='contact-cardDetails' class='mb-3'>
+<h5 class='card-title text-truncate'>ANDREW MANUELE</h5><h6 class='card-subtitle text-muted my-2'>manuele.lange@gmail.com</h6><h6 class='card-subtitle text-muted my-2'>914.224.6391</h6><h6 class='card-subtitle text-muted my-2'>75 LELAND AVENUE</h6><h6 class='card-subtitle text-muted my-2'>PLEASANTVILLE, NY 10570</h6>
+</div>
+
+</div><!-- end card body -->
+
+</div><!-- end card contact-card -->
+
+</div><!-- end column1 (md6) -->
+
+<div class='col-md-6 grid-item'><!-- begin column2 (md6) -->
+
+<div id='account-links-card' class='card mb-3' style><!-- begin card account-links-card -->
+<div class='list-group list-group-flush'><a href='/payment' class="list-group-item list-group-item-action" aria-label="Open Make A Payment Page" title="Make A Payment" alt="Make A Payment">Make A Payment</a><a href='/user-records?tab=transactions' class="list-group-item list-group-item-action" aria-label="Open Account History Page" title="Account History" alt="Account History">Account History</a><a href='/statements' class="list-group-item list-group-item-action" aria-label="Open Electronic Documents Page" title="Electronic Documents" alt="Electronic Documents">Electronic Documents</a></div>
+</div><!-- end card account-links-card -->
+
+</div><!-- end column2 (md6) -->
+
+<div class='col-md-6 grid-item'><!-- begin column2 (md6) -->
+
+<div id='account-data' class='card text-left mb-3' style><!-- begin card account-data -->
+<div class='card-header' role><h5 class='card-title mb-0'>Account Overview</h5></div>
+<div class='table-responsive mb-0 border-top-0'>
+
+<table class='table table-borderless mb-0' data-toggle='table' data-classes='table-no-bordered' data-card-view='true' unitWidth='%'>
+<thead>
+<tr>
+<th data-field="Account">Account</th>
+<th data-field="Balance">Balance</th>
+<th data-field="Establish_Date">Establish Date</th>
+<th data-field="Email">Email</th>
+<th data-field="Primary_Phone">Primary Phone</th>
+<th data-field="Customer_Name">Customer Name</th>
+<th data-field="Delivery_Street">Delivery Street</th>
+<th data-field="Delivery_City">Delivery City</th>
+<th data-field="Delivery_State">Delivery State</th>
+<th data-field="Delivery_Zip">Delivery Zip</th>
+<th data-field="Billing_Street_Address">Billing Street Address</th>
+<th data-field="Billing_Zip">Billing Zip</th>
+<th data-field="Tank_Size">Tank Size</th></tr>
+</thead><tbody id='the-tbody'>
+<tr>
+<td>MANLE06 </td>
+<td>$0.00 </td>
+<td>10/27/2023</td>
+<td>manuele.lange@gmail.com </td>
+<td>914-224-6391 </td>
+<td>ANDREW MANUELE </td>
+<td>75 LELAND AVENUE </td>
+<td>PLEASANTVILLE </td>
+<td>NY </td>
+<td>10570 </td>
+<td>75 LELAND AVENUE </td>
+<td>10570 </td>
+<td>550 gallons</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div><!-- end card account-data -->
+
+<div id='tank-data' class='card text-left mb-3' style><!-- begin card tank-data -->
+<div class='card-header' role><h5 class='card-title mb-0'>Tank Overview</h5></div>
+<div class='card-body'>
+
+<div class='form-group'>
+
+<div class='input-group input-group-sm'>
+
+<div class='input-group-prepend'>
+<label class='input-group-text' for='tank_num'>Viewing Tank</label>
+</div>
+
+<select id='loc_selector' name='loc_selector' onChange='selectMembershipTank(this.value, "tank_details", "/user-home");' aria-labelledby='Viewing the only tank on this account, no other tanks to select' disabled class='custom-select overflow-hidden'>
+<option value='0001' selected>Biff</option>
+</select>
+
+</div>
+
+</div>
+
+<div id='tankOverviewLinks'>
+<a href='/tanks' class="card-link" aria-label="Open Tanks Page" title="Tanks Page" alt="Tanks Page">Manage Tanks</a><a href='/fuelpurchase' class="card-link" aria-label="Open Request Delivery Page" title="Request Delivery Page" alt="Request Delivery Page">Request Delivery</a>
+</div>
+
+</div>
+
+<div class='row row-eq-height no-gutters g-0'><!-- begin row eq -->
+
+<div class='col-lg-8 col-md-12 col-sm-8 col-12 order-2 order-sm-2 order-md-2 order-lg-1 order-xl-1'><!-- begin table side -->
+
+<div id='tank-data-cage' class='table-responsive mb-0 border-top-0'>
+
+<table class='table table-borderless mb-0' data-toggle='table' data-classes='table-no-bordered' data-card-view='true'>
+<thead>
+<tr>
+<th data-field="Delivery Schedule Type" data-width="50%">Delivery Schedule Type</th>
+<th data-field="Product Name" data-width="50%">Product Name</th>
+<th data-field="Usage" data-width="50%">Usage</th>
+<th data-field="Last Delivery Date" data-width="50%">Last Delivery Date</th>
+<th data-field="Last Delivery Units" data-width="50%">Last Delivery Units</th>
+<th data-field="Annual Consumption" data-width="50%">Annual Consumption</th>
+<th data-field="Tank Monitor Reported Gallons" data-width="50%">Tank Monitor Reported Gallons</th></tr>
+</thead><tbody class='pb-0 mb-0'>
+<tr>
+<td>Addept Gremlin </td>
+<td>B-20 Bio-Fuel </td>
+<td>Heat & HW </td>
+<td>11/02/2023 </td>
+<td>238.70 </td>
+<td>1106.72 </td>
+<td>241.67 </td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div><!-- end table side -->
+
+<div class='col-lg-4 col-md-12 col-sm-4 col-12 order-1 order-sm-2 order-md-1 order-lg-2 order-xl-2'><!-- begin gauge side -->
+
+<div id='tank_gauge' class='p-2'>
+
+<form method='POST' name='tank_form' action>
+
+<input type='hidden' id='tank_gauge_current' name='tank_gauge_current' value='241.67' class=' '>
+<input type='hidden' id='tank_gauge_max' name='tank_gauge_max' value='550.00' class=' '>
+<input type='hidden' id='tank_gauge_percent' name='tank_gauge_percent' value='44' class=' '>
+
+<div class='chartjs-gauge-wrapper'>
+<canvas id='tank_gauge_cage'></canvas>
+<div id='tank_gauge_summary' class='text-center'>
+In Tank: 242 gallons<br><strong>44% </strong>
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</div><!-- end gauge side -->
+
+</div><!-- end row eq -->
+
+</div><!-- end card tank-data -->
+
+</div><!-- end column2 (md6) -->
+
+<div class='col-md-6 grid-item'><!-- begin column1 (md6) -->
+
+</div><!-- end column1 (md6) -->
+
+</div><!-- end row -->
+
+<!--- End Trans Data, Start User Info, Div Cnt: 1 --->
+
+</form>
+
+<!--- Div Cnt: 0 - for upcoming Main Div closure --->
+
+</div><!-- main-div -->
+
+</div><!-- main-column -->
+
+</div><!-- main-row -->
+
+<!-- Row Footer -->
+
+<!-- Row 6: F -->
+<div id='row-F' class='site-row footer-row'>
+<div class='footer'><!-- footer-column -->
+
+<!-- Start Endpage Div -->
+
+<div id='endpage-div' class='endpage-div'>
+<div class='innerfooter'></div>
+</div>
+
+<!-- End Endpage Div -->
+
+</div><!-- footer-column -->
+
+</div><!-- Row 6: footer-row -->
+
+</div><!-- body-table -->
+
+</div><!-- outer-div -->
+
+<!-- End Outer Div -->
+<footer class='footer'>
+<div class='container text-center text-md-left py-2'><!-- begin footer container -->
+
+<div class='row d-flex align-items-center'><!-- begin footer row -->
+
+<div class='col-md-6 col-lg-6'><!-- begin footer left column -->
+
+<div class='text-center text-md-left' id='footerLeft'>
+
+<div class='d-inline mr-1' id='copyright'>
+&copy; Copyright 2023 <a href='/login' title="Robison" alt="Robison"><strong>Robison</strong></a>
+</div>
+
+</div>
+
+</div><!-- end footer left column -->
+
+<div class='col-md-6 col-lg-6'><!-- begin footer right column -->
+
+<div class='text-center text-md-right'>
+<ul class='footer-nav d-inline list-unstyled list-inline mb-0' id='footerNav_Left'><li class='footer-item list-inline-item'><a href='https://www.robisonoil.com/' title="Home" alt="Home" class="footer-link" target="_blank">Home</a></li><li class='footer-item list-inline-item'><a href='https://www.robisonoil.com/about-us/' title="About Us" alt="About Us" class="footer-link" target="_blank">About Us</a></li><li class='footer-item list-inline-item'><a href='https://www.robisonoil.com/sitemap/' title="Sitemap" alt="Sitemap" class="footer-link" target="_blank">Sitemap</a></li><li class='footer-item list-inline-item'><a href='https://www.robisonoil.com/contact-us/' title="Contact Us" alt="Contact Us" class="footer-link" target="_blank">Contact Us</a></li><li class='footer-item list-inline-item'><a href='https://www.facebook.com/RobisonEnergy/' title="Facebook" alt="Facebook" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class='fab fa fa-facebook-f'></i></a></li><li class='footer-item list-inline-item'><a href='https://twitter.com/RobisonEnergy1' title="Twitter" alt="Twitter" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class='fab fa fa-twitter'></i></a></li><li class='footer-item list-inline-item'><a href='https://www.youtube.com/robisonenergy' title="Youtube" alt="Youtube" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class='fab fa fa-youtube'></i></a></li><li class='footer-item list-inline-item'><a href='https://www.instagram.com/robisonenergy/' title="Instagram" alt="Instagram" class="footer-link btn-floating btn-sm rgba-white-slight mx-1" target="_blank"><i class='fab fa fa-instagram'></i></a></li></ul>
+</div>
+
+</div><!-- end footer right column -->
+
+</div><!-- end footer row -->
+
+</div><!-- end footer container -->
+</footer><script type='text/javascript' >
+                document.addEventListener("DOMContentLoaded", function(){
+//had to disable this, the dwl-browser-detect.js file is not compatible with IE
+//              if(window.dwlbroserdetect.satisfies({mobile:{safari:'>=9'}})){
+//                  document.querySelector("link[data-css-id='ios-no-zoom']").disabled = false;
+//              }
+});
+</script></body></html>
