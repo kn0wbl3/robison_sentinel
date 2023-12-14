@@ -3,7 +3,10 @@ import os
 from bs4 import BeautifulSoup
 import datetime as dt
 
-def main():
+BASE_URL = "https://myaccount.robisonoil.com"
+DEBUG_MODE = os.environ["DEBUG_MODE"]
+
+def main(debug_mode):
     """
     grab the data from robison
         log into robison
@@ -11,11 +14,21 @@ def main():
     catalog data and date
     if the data goes below a certain level, email me
     """
-    soup = log_into_website_and_grab_data()
+    base_url = get_base_url(debug_mode)
+    soup = log_into_website_and_grab_data(base_url)
     current_oil_level = get_oil_level_from_soup(soup)
+    print(current_oil_level)
 
 
-def log_into_website_and_grab_data():
+def get_base_url(debug_mode):
+    """
+    when debugging, we want to go to localhost for webpage requests.
+    otherwise, go to the interwebs
+    """
+    return BASE_URL if debug_mode else "127.0.0.1"
+
+
+def log_into_website_and_grab_data(base_url):
     # Fill in your details here to be posted to the login form.
     payload = {
         "email_check": os.environ["ROBISON_USERNAME"],
@@ -25,8 +38,8 @@ def log_into_website_and_grab_data():
 
     # Use 'with' to ensure the session context is closed after use.
     with requests.Session() as s:
-        p = s.post('https://myaccount.robisonoil.com/login', data=payload)
-        page = s.get('https://myaccount.robisonoil.com/user-home')
+        p = s.post(f"{base_url}/login", data=payload)
+        page = s.get(f"{base_url}/user-home")
     
     soup = BeautifulSoup(page.content, "html.parser")
     return soup
@@ -41,4 +54,4 @@ def get_oil_level_from_soup(soup):
 
 
 if __name__ == "__main__":
-    main()
+    main(DEBUG_MODE)

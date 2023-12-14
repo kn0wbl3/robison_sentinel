@@ -1,0 +1,24 @@
+services:
+  robison_website:
+    build:
+      context: .
+      dockerfile: ./tests/docker/server/server.Dockerfile
+    init: true
+    command:
+      - /workarea/server.sh
+    ports:
+      - 5000:5000
+    healthcheck:
+      test: 'nc -vz localhost 8080'
+      interval: 3s
+  
+  # client:
+  #   build:
+  #     context: .
+  #     dockerfile: ./tests/docker/client.Dockerfile
+  #   init: true
+  #   depends_on:
+  #     robison_website:
+  #       condition: service_healthy
+  #   command:
+  #     - /workarea/client.sh
