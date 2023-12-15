@@ -8,4 +8,4 @@ EXPOSE 5000
 
 RUN chmod +x server.sh
 
-RUN python3.11 -m pip install -r requirements.txt
+RUN python3.11 -m pip install -r server_requirements.txt
