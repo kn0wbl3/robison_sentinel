@@ -1,6 +1,6 @@
 import pytest
 from unittest import mock
-import main
+import robison_sentinel.input.main as main
 import os
 
 os.environ["DEBUG_MODE"] = True

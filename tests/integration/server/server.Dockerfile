@@ -1,11 +1,9 @@
-FROM artprod.dev.bloomberg.com/dpkg-python-development-base:3.11
+FROM python:3
 
 WORKDIR /workarea
 
-COPY /tests/docker/server .
+COPY /tests/integration/server .
 
 EXPOSE 5000
 
 RUN chmod +x server.sh
-
-RUN python3.11 -m pip install -r server_requirements.txt

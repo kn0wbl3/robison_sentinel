@@ -4,8 +4,6 @@ WORKDIR /workarea
 
 COPY /output/ .
 
-EXPOSE 5000
+EXPOSE 5001
 
 RUN chmod +x broadcast.sh
-
-RUN python3.11 -m pip install -r broadcast_requirements.txt

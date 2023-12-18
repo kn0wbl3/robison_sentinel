@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     # grab data
-    oil_data = pd.read_csv("../oil_levels.csv")
+    oil_data = pd.read_csv("data/oil_levels.csv")
     # Creating Figure
     p = figure(
         title="Oil Levels", 
@@ -35,4 +35,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port="5000")
+    app.run(debug=True, host="0.0.0.0", port="5001")

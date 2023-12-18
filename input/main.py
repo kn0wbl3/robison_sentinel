@@ -7,14 +7,16 @@ import time
 import logging
 import logging.config
 
-logging.config.fileConfig('config/logging.conf')
+logging.config.fileConfig('logging.conf')
 logger = logging.getLogger(__name__)
 
 BASE_URL = "https://myaccount.robisonoil.com"
+LOCAL_HOST = "http://127.0.0.1:5000"
 DEBUG_MODE = os.getenv("DEBUG_MODE")
 ROBISON_USERNAME = os.getenv("ROBISON_USERNAME")
 ROBISON_PASSWORD = os.getenv("ROBISON_PASSWORD")
 THRESHOLD = 100
+OIL_FILE = "data/oil_levels.csv"
 
 def main(debug_mode):
     """
@@ -44,7 +46,7 @@ def get_base_url(debug_mode):
     when debugging, we want to go to localhost for webpage requests.
     otherwise, go to the interwebs
     """
-    return "http://127.0.0.1:5000" if debug_mode else BASE_URL
+    return LOCAL_HOST if debug_mode else BASE_URL
 
 
 def log_into_website_and_grab_data(base_url, username, password):
@@ -73,7 +75,7 @@ def get_oil_level_from_soup(soup):
 
 
 def add_oil_level_to_csv(datapoint):
-    with open("oil_levels.csv", "a") as csvfile:
+    with open(OIL_FILE, "a") as csvfile:
         fieldnames = ["date", "oil_level"]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writerow(datapoint)
