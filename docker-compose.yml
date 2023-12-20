@@ -2,23 +2,32 @@ services:
   robison_website:
     build:
       context: .
-      dockerfile: ./tests/docker/server/server.Dockerfile
+      dockerfile: ./tests/integration/server/server.Dockerfile
     init: true
-    command:
-      - /workarea/server.sh
     ports:
       - 5000:5000
-    healthcheck:
-      test: 'nc -vz localhost 8080'
-      interval: 3s
+    command:
+      - /workarea/server.sh
+
+  client:
+    build:
+      context: .
+      dockerfile: ./input/client.Dockerfile
+    init: true
+    command:
+      - /workarea/client.sh
+    volumes:
+      - ./data:/data
+
+  broadcast:
+    build:
+      context: .
+      dockerfile: ./output/broadcast.Dockerfile
+    init: true
+    ports:
+      - 5001:5001
+    command:
+      - /workarea/broadcast.sh
+    volumes:
+      - ./data:/data
   
-  # client:
-  #   build:
-  #     context: .
-  #     dockerfile: ./tests/docker/client.Dockerfile
-  #   init: true
-  #   depends_on:
-  #     robison_website:
-  #       condition: service_healthy
-  #   command:
-  #     - /workarea/client.sh

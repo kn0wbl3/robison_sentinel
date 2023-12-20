@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
 
 echo "Starting client"
-python3.11 main.py
+source ./set_envvars.sh
+python main.py
