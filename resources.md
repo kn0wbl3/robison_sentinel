@@ -1,0 +1,1 @@
+how to host from github: https://pages.github.com/
